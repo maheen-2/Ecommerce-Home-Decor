@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- GOOGLE FONTS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Black+Ops+One&family=Blaka+Hollow&family=Caveat+Brush&family=Cormorant+Garamond:wght@300&family=Crimson+Text&family=Edu+QLD+Beginner&family=IM+Fell+DW+Pica&family=Josefin+Slab:wght@300&family=Lobster&family=Merienda:wght@400;700&family=Mirza&family=Monofett&family=Nunito:wght@200&family=Open+Sans:wght@300&family=Patrick+Hand&family=Philosopher&family=Quantico&family=Roboto:wght@100&family=Rubik+Moonrocks&family=Tajawal:wght@300&family=Ubuntu+Mono&display=swap"
+        rel="stylesheet">
+    <!-- ICONS FROM FONT AWESOME (paste only in head)-->
+    <script src="https://kit.fontawesome.com/b3fdc9b1bd.js" crossorigin="anonymous"></script>
+    <!-- ANIMATE ON SCROLL AOS CSS LIBRARY -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- BOOTSTRAP STYLESHEET -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- CSS STYLESHEET -->
+    <link rel="stylesheet" href="shop.css">
+    <title>Shop Kitchen</title>
+</head>
+
+<body>
+    <!-- SECTION 1️⃣ -->
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <img src="../imgs/logo.png" alt="">
+        <a href="" class="toggle-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+            <ul>
+                <li><a href="../home/home.html">About</a></li>
+
+                <li>
+                    <!-- NAVBAR DROPDOWN -->
+                    <div class="dropdown">
+                        <button type="button" class="dropbtn">Shop
+                            <i class="fas fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="livingroom.html">Living Room</a>
+                            <a href="bedroom.html">Bedroom</a>
+                            <a href="diningroom.html">Dining Room</a>
+                            <a href="#">Kitchen</a>
+                            <a href="decor.html">Decorations</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="../team/team.html">Team</a></li>
+                <li><a href="../contact/contact.html">Contact Us</a></li>
+                <li><a href=""><i class="fas fa-heart"></i></a></li>
+                <!--Shopping cart-->
+                <li class="sum-prices"><a onclick="showCart()" href="#"><i
+                            class="cart-icon fas fa-shopping-cart"></i></a></li>
+                <!-- Always remember that whenever u want to use anchor tag as a button i.e to implement
+                some js and so that it doesn't redirect to some other page & start loading, always add # & write 
+                onclick() before href. -->
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- SECTION 2️⃣ -->
+    <!-- CART -->
+    <div class="cart">
+        <h2 class="cart-title">Your Cart</h2>
+        <!-- CART CONTENT -->
+        <div class="cart-content">
+            <!-- ADDED IN JS cartShopBox variable: 
+                <div class="cart-box">
+                <img src="./furn/9.webp" alt="">
+                <div class="detail-box">
+                    <div class="cart-product-title"> Vienna Sofa - 3 Seater</div>
+                    <div class="cart-product-price"> Rs 317600</div>
+                    <input type="number" class="cart-quantity" value="1">
+                </div>
+                  REMOVE CART
+            <i class="cart-remove fas fa-trash"></i>
+            </div>
+            <div class="cart-box">
+                <img src="./furn/10.webp" alt="">
+                <div class="detail-box">
+                    <div class="cart-product-title"> Sona TV Table - Large</div>
+                    <div class="cart-product-price"> Rs 60000</div>
+                    <input type="number" class="cart-quantity" value="1">
+                </div>-->
+            <!-- REMOVE CART-->
+            <!-- <i class="cart-remove fas fa-trash"></i>
+            </div> -->
+        </div>
+        <!-- CART TOTAL -->
+        <div class="cart-total">
+            <div class="total-title"> Total</div>
+            <div class="total-price"> Rs 0</div>
+        </div>
+        <!-- BUY BUTTON -->
+        <button type="button" class="btn-buy"><a href="../cart/cart.html">Buy Now</a></button>
+        <!-- CART CLOSE -->
+        <i onclick="closeCart()" class="close-cart">X</i>
+    </div>
+
+
+    <!-- SECTION 3️⃣ -->
+    <!-- HIGHLIGHT - LIVING ROOM -->
+    <div class="living-room" style="background-image: url(../imgs/1.jpg);">
+        <!-- The viewBox attribute defines the position & dimension, in user space, of a SVG viewport.
+             Its values r a list of 4 nos: min-x, min-y, width and height. -->
+        <svg viewBox="0 0 1500 300">
+            <!-- The <symbol> element is a container used to define graphical template objects which can be instantiated by a <use> element.-->
+            <symbol id="s-text">
+                <!-- The SVG <text> element draws a graphics element consisting of text. -->
+                <text text-anchor="middle" x="50%" y="80%">KITCHEN</text>
+            </symbol>
+            <!-- The <g> SVG element is a container used to group other SVG elements. -->
+            <g class="g-ants">
+                <!-- It can also group multiple elements to be referenced later with the <use> element. -->
+                <!-- The SVG <use> element takes nodes from within the SVG document and duplicates them somewhere else. -->
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <!-- The xlink:href attribute defines a reference to a resource as a reference IRI. MUST 
+                     Such references are taken to be referring to the root element of the referenced document.-->
+            </g>
+        </svg>
+    </div>
+
+
+    <!-- SECTION 4️⃣ -->
+    <div class="shop container">
+        <h2 class="section-title">Shop Products</h2>
+        <!-- CONTENT -->
+        <div class="shop-content">
+            <!-- BOX 1 -->
+            <div class="product-box">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202217/0198/smeg-two-door-refrigerator-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Smeg Two-Door Refrigerator</h2>
+                <span class="price">$3,699</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 2 -->
+            <div class="product-box">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202212/0037/la-jolla-glass-dinnerware-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">La Jolla Glass Dinnerware Sets</h2>
+                <span class="price">$19</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 3 -->
+            <div class="product-box">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202218/0497/constellation-salad-plate-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Constellation Salad Plate Sets</h2>
+                <span class="price">$39.99</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 4 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202236/0008/fluted-acrylic-drinking-glasses-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Fluted Acrylic Drinking Glasses</h2>
+                <span class="price">$32</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 5 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202224/0033/estelle-colored-glass-stemmed-wine-glass-set-of-6-2-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Estelle Colored Glass Stemmed Wine Glass (Set of 6)</h2>
+                <span class="price">$185</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 6 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202225/0015/reactive-glaze-stoneware-dinnerware-set-of-20-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Reactive Glaze Stoneware Dinnerware Collection</h2>
+                <span class="price">$19.99</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 7 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202235/0038/streamline-3-tiered-wide-wall-shelf-24-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Streamline 3-Tiered Wide Wall Shelf (24")</h2>
+                <span class="price">$300</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 8 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202213/0374/cabana-acrylic-drinkware-set-of-6-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Cabana Acrylic Rainbow Drinking Glasses (Set of 6)</h2>
+                <span class="price">$12</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 9 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202226/0046/slate-cheese-board-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Slate Charcuterie Board</h2>
+                <span class="price">$25.65</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 10 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202229/0463/ocean-waves-porcelain-dinnerware-set-of-20-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Ocean Waves Porcelain Dinnerware (Set of 20)</h2>
+                <span class="price">$313</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 11 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202212/0016/permasteel-80-qt-wood-grain-rolling-patio-cooler-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Permasteel 80 Qt. Wood Grain Rolling Patio Cooler</h2>
+                <span class="price">$584.10</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 12 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202214/0121/mdesign-metal-carts-5-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Design Metal Carts</h2>
+                <span class="price">$899</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 13 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202218/0055/smeg-knife-block-knives-set-1-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Smeg Knife Block & Knives Set (Set of 7)</h2>
+                <span class="price">$500</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 14 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202215/0036/estelle-colored-glass-stemless-wine-glass-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Estelle Colored Glass Stemless Wine Glass (Set of 6)</h2>
+                <span class="price">$170</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 15 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202226/0067/dragonfly-flatware-place-settings-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Dragonfly Polished Stainless Steel Flatware Sets</h2>
+                <span class="price">$220</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 16 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202227/0028/greenpan-padova-nonstick-10-piece-cookware-set-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Greenpan® Padova Ceramic Nonstick 10-Piece Cookware Set</h2>
+                <span class="price">$400</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 17 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202221/0015/yamazaki-tower-2-level-dish-drainer-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Yamazaki Tower 2-Level Dish Drainer</h2>
+                <span class="price">$88</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 18 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202224/0067/img3c.jpg" alt=""
+                    class="product-img">
+                <h2 class="product-title">Smeg Blender</h2>
+                <span class="price">$300</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 19 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202217/0603/new-riviera-table-runner-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Riviera Cotton Table Runner</h2>
+                <span class="price">$33</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 20 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202217/0058/slanted-dots-runner-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Slanted Dots Cotton Table Runner</h2>
+                <span class="price">$49</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 21 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202219/0052/brabantia-fall-front-steel-bread-box-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Brabantia Fall Front Steel Bread Box</h2>
+                <span class="price">$49</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 22 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202218/0459/chantal-sven-kettle-with-wood-handle-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Chantal Sven Kettle with Wood Handle</h2>
+                <span class="price">$69</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 23 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202221/0250/crow-canyon-enamel-mugs-set-of-4-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Crow Canyon Enamel Mugs (Set of 4)
+                </h2>
+                <span class="price">$60</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 24 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202231/0080/youcopia-upspace-adjustable-shelf-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">YouCopia UpSpace Adjustable Shelf</h2>
+                <span class="price">$19</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 25 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202218/0067/le-creuset-8-qt-stockpot-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Le Creuset 8 Qt. Stockpot</h2>
+                <span class="price">$129.99</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 26 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202230/0137/staub-cast-iron-round-cocotte-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Staub Cast Iron Round Cocotte</h2>
+                <span class="price">$114.99</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 27 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202212/0017/berghoff-leo-glass-container-set-3-piece-1-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">BergHOFF Leo Glass Container Set - 3 Piece</h2>
+                <span class="price">$34.99</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 28 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202217/0121/smeg-full-size-refrigerator-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Smeg Full Size Refrigerator</h2>
+                <span class="price">$2990</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 29 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202235/0072/dapper-animal-salt-pepper-shakers-set-of-2-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Dapper Animal Salt & Pepper Shakers (Set of 2)</h2>
+                <span class="price">$9.99 </span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 30 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202235/0097/wooden-3-tier-server-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Wooden 3-Tier Server</h2>
+                <span class="price">$110</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 31 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202235/0443/kaloh-stoneware-mug-sets-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Kaloh Stoneware Mug Sets</h2>
+                <span class="price">$39.60</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 32 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202227/0083/puik-designs-stacking-ceramic-monday-espresso-mug-set-of-2-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Keraclay Purple Glazed Stoneware Mug</h2>
+                <span class="price">$23.90</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+            <!-- BOX 33 -->
+            <div class="product-box" data-aos="fade-in">
+                <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202235/0024/indoor-outdoor-cami-ceramic-round-side-table-13-c.jpg"
+                    alt="" class="product-img">
+                <h2 class="product-title">Cami Indoor/Outdoor Ceramic Round Side Table (13")</h2>
+                <span class="price">$318</span>
+                <i class="add-cart fas fa-shopping-cart"></i>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- SECTION -->
+    <!-- FOOTER -->
+    <footer>
+        <!-- WAVES ANIMATED BG -->
+        <div class="waves"></div>
+        <div class="wave"></div>
+        <div class="row">
+            <div class="col">
+                <img class="logo" src="../imgs/logo.png" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo provident commodi adipisci non eos
+                    minus cupiditate, totam blanditiis neque, obcaecati in error omnis. Optio deleniti modi soluta
+                    nostrum non mollitia!</p>
+            </div>
+            <div class="col">
+                <h3>Office <div class="underline"><span></span></div>
+                </h3>
+                <p>223 Crystal Box Factory</p>
+                <p>30 Great Guildfold</p>
+                <p>London, SE1 OHS</p>
+                <p class="email">london@vault45.com</p>
+                <p>+44 (20) 8164-5470</p>
+            </div>
+            <div class="col">
+                <h3>Links <div class="underline"><span></span></div>
+                </h3>
+                <ul>
+                    <li><a href="./">Home</a></li>
+                    <li><a href="">Shop</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Team</a></li>
+                    <li><a href="">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>NewsLetter <div class="underline"><span></span></div>
+                </h3>
+                <form>
+                    <i class="far fa-envelope"></i>
+                    <input type="email" placeholder="Enter your email Id" required>
+                    <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                </form>
+                <div class="social-icons">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-whatsapp"></i>
+                    <i class="fab fa-pinterest"></i>
+                </div>
+            </div>
+        </div>
+        <div class="end">
+            <p class="copyright">Maheen Mustansar © 2022 - All Rights Reserved</p>
+        </div>
+    </footer>
+
+
+    <!-- JS SHEET -->
+    <script src="shop.js"></script>
+    <!-- BOOTSRAP JS SHEET -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <!-- ANIMATE ON SCROLL AOS JS LIBRARY -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

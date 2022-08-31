@@ -1,0 +1,544 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #000;
+}
+
+
+/*                    NAVBAR:                  */
+
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    z-index: 3;
+}
+
+img {
+    margin: 10px 20px;
+    height: 70px;
+    width: 75px;
+    z-index: 2;
+}
+
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    display: block;
+    padding: 5px 10px;
+    margin: 10px 30px;
+    text-decoration: none;
+    color: white;
+    transition: 0.5s;
+}
+
+.navbar-links .dropdown .dropbtn {
+    color: white;
+}
+
+.navbar-links li a .cart {
+    width: 40px;
+    height: 40px;
+    color: black;
+    background-color: white;
+}
+
+
+/*                    NAVBAR ANIMATION:                  */
+
+.navbar-links ul:hover li a {
+    /* It makes all the nav-links blurred when one is in focus. */
+    transform: scale(1.1);
+    opacity: 0.8;
+    filter: blur(5px);
+}
+
+.navbar-links ul li a:hover {
+    /* The nav-link in focus increases in size & get focused.*/
+    transform: scale(1.2);
+    opacity: 1;
+    filter: blur(0);
+    text-decoration: none;
+    color: #fff;
+    background-color: #f94144;
+    border-radius: 30px;
+}
+
+
+/*                    NAVBAR SHOP DROPDOWN:                  */
+
+/* Style the dropdown button to fit inside the topnav */
+.dropdown .dropbtn {
+    font-size: 17px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    /* Inherits this property from its parent element. */
+    padding: 14px 16px;
+    font-family: inherit;
+    margin: 0;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: rgba(179, 174, 174, 0.427);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/*                    NAVBAR RESPONSIVENESS:                  */
+
+.toggle-btn {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-btn .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-btn {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+        background-color: black;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+
+/*                    FOOTER:                  */
+
+footer {
+    margin: 150px 0 0 0;
+    padding: 70px 0 30px;
+    bottom: 0;
+    width: 100%;
+    min-height: 100px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(21, 58, 68);
+    font-size: 13px;
+    line-height: 20px;
+    color: white;
+}
+
+.row {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.col {
+    /* Defines the size of the flex-item along the main axis of the flex container. 
+    The main axis is horizontal if flex-direction is set to row and vertical if the flex-direction property is set to column.*/
+    flex-basis: 25%;
+    padding: 10px;
+    margin: 15px;
+}
+
+.col:nth-child(2),
+.col:nth-child(3) {
+    flex-basis: 15%;
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 30px;
+}
+
+.col h3 {
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.email {
+    width: fit-content;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+ul li {
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+form {
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+}
+
+form .far {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+form input {
+    width: 100%;
+    background: transparent;
+    color: #ccc;
+    border: 0;
+    outline: none;
+}
+
+form button {
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+form button .fa {
+    font-size: 16px;
+    color: 16px;
+}
+
+.social-icons .fab {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #000;
+    background: #fff;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.social-icons .fab:hover {
+    transform: translateY(-10px);
+}
+
+.end {
+    border: 0;
+    position: absolute;
+    bottom: -10px;
+}
+
+.copyright {
+    text-align: center;
+    margin: 25px 0 15px 0;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.underline {
+    width: 100%;
+    height: 5px;
+    background-color: #767676;
+    border-radius: 3px;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    overflow: hidden;
+}
+
+.underline span {
+    position: absolute;
+    background: #fff;
+    width: 15px;
+    height: 100%;
+    border-radius: 3px;
+    top: 0;
+    left: 10px;
+    animation: moving 2s linear infinite;
+}
+
+@keyframes moving {
+    0% {
+        left: 0%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    footer {
+        /* Resets a property to its inherited value. It is dobe here as we want the footer to be scrollable on smaller screens. */
+        bottom: unset;
+        width: 100vw;
+    }
+
+    .col {
+        flex-basis: 100%;
+    }
+
+    .col:nth-child(2),
+    .col:nth-child(3) {
+        flex-basis: 100%;
+    }
+}
+
+
+/*                    FOOTER WAVES ANIMATION:                  */
+
+footer .waves {
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    top: -90px;
+    left: 0;
+    background-color: rgba(21, 58, 68, 0.855);
+    ;
+    animation: waves 2s linear infinite;
+}
+
+@keyframes waves {
+
+    0% {
+        clip-path: polygon(0% 69%, 5% 64%, 9% 59%, 13% 55%, 18% 51%, 25% 51%, 30% 53%, 35% 56%, 41% 60%, 46% 62%, 53% 65%, 58% 67%, 63% 66%, 67% 63%, 71% 59%, 76% 55%, 82% 51%, 88% 51%, 93% 53%, 98% 56%, 100% 60%, 100% 100%, 0% 100%);
+    }
+
+    20% {
+        clip-path: polygon(0% 79%, 5% 74%, 9% 69%, 13% 65%, 18% 61%, 25% 61%, 30% 63%, 35% 66%, 41% 70%, 46% 72%, 53% 75%, 58% 77%, 63% 76%, 67% 73%, 71% 69%, 76% 65%, 82% 61%, 88% 61%, 93% 63%, 98% 66%, 100% 70%, 100% 100%, 0% 100%);
+    }
+
+    40% {
+        clip-path: polygon(0% 69%, 5% 64%, 9% 59%, 13% 55%, 18% 51%, 25% 51%, 30% 53%, 35% 56%, 41% 60%, 46% 62%, 53% 65%, 58% 67%, 63% 66%, 67% 63%, 71% 59%, 76% 55%, 82% 51%, 88% 51%, 93% 53%, 98% 56%, 100% 60%, 100% 100%, 0% 100%);
+    }
+
+    60% {
+        clip-path: polygon(0% 79%, 5% 74%, 9% 69%, 13% 65%, 18% 61%, 25% 61%, 30% 63%, 35% 66%, 41% 70%, 46% 72%, 53% 75%, 58% 77%, 63% 76%, 67% 73%, 71% 69%, 76% 65%, 82% 61%, 88% 61%, 93% 63%, 98% 66%, 100% 70%, 100% 100%, 0% 100%);
+    }
+
+    80% {
+        clip-path: polygon(0% 69%, 5% 64%, 9% 59%, 13% 55%, 18% 51%, 25% 51%, 30% 53%, 35% 56%, 41% 60%, 46% 62%, 53% 65%, 58% 67%, 63% 66%, 67% 63%, 71% 59%, 76% 55%, 82% 51%, 88% 51%, 93% 53%, 98% 56%, 100% 60%, 100% 100%, 0% 100%);
+    }
+
+    100% {
+        clip-path: polygon(0% 79%, 5% 74%, 9% 69%, 13% 65%, 18% 61%, 25% 61%, 30% 63%, 35% 66%, 41% 70%, 46% 72%, 53% 75%, 58% 77%, 63% 76%, 67% 73%, 71% 69%, 76% 65%, 82% 61%, 88% 61%, 93% 63%, 98% 66%, 100% 70%, 100% 100%, 0% 100%);
+    }
+
+}
+
+footer .wave {
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    top: -90px;
+    left: 0;
+    background-color: rgba(21, 58, 68, 0.737);
+    animation: wave 2s linear infinite;
+}
+
+@keyframes wave {
+
+    0% {
+        clip-path: polygon(0% 68%, 6% 71%, 11% 74%, 15% 76%, 18% 76%, 22% 76%, 25% 74%, 28% 72%, 32% 68%, 36% 64%, 42% 59%, 47% 57%, 54% 57%, 59% 60%, 66% 64%, 70% 66%, 74% 68%, 81% 73%, 87% 75%, 91% 75%, 96% 74%, 100% 71%, 100% 100%, 0% 100%);
+    }
+
+    20% {
+        clip-path: polygon(0% 58%, 6% 61%, 11% 64%, 15% 66%, 18% 66%, 22% 66%, 25% 64%, 28% 62%, 32% 58%, 36% 54%, 42% 49%, 47% 47%, 54% 47%, 59% 50%, 66% 54%, 70% 56%, 74% 58%, 81% 63%, 87% 65%, 91% 65%, 96% 64%, 100% 61%, 100% 100%, 0% 100%);
+    }
+
+    40% {
+        clip-path: polygon(0% 68%, 6% 71%, 11% 74%, 15% 76%, 18% 76%, 22% 76%, 25% 74%, 28% 72%, 32% 68%, 36% 64%, 42% 59%, 47% 57%, 54% 57%, 59% 60%, 66% 64%, 70% 66%, 74% 68%, 81% 73%, 87% 75%, 91% 75%, 96% 74%, 100% 71%, 100% 100%, 0% 100%);
+    }
+
+    60% {
+        clip-path: polygon(0% 58%, 6% 61%, 11% 64%, 15% 66%, 18% 66%, 22% 66%, 25% 64%, 28% 62%, 32% 58%, 36% 54%, 42% 49%, 47% 47%, 54% 47%, 59% 50%, 66% 54%, 70% 56%, 74% 58%, 81% 63%, 87% 65%, 91% 65%, 96% 64%, 100% 61%, 100% 100%, 0% 100%);
+    }
+
+    80% {
+        clip-path: polygon(0% 68%, 6% 71%, 11% 74%, 15% 76%, 18% 76%, 22% 76%, 25% 74%, 28% 72%, 32% 68%, 36% 64%, 42% 59%, 47% 57%, 54% 57%, 59% 60%, 66% 64%, 70% 66%, 74% 68%, 81% 73%, 87% 75%, 91% 75%, 96% 74%, 100% 71%, 100% 100%, 0% 100%);
+    }
+
+    100% {
+        clip-path: polygon(0% 58%, 6% 61%, 11% 64%, 15% 66%, 18% 66%, 22% 66%, 25% 64%, 28% 62%, 32% 58%, 36% 54%, 42% 49%, 47% 47%, 54% 47%, 59% 50%, 66% 54%, 70% 56%, 74% 58%, 81% 63%, 87% 65%, 91% 65%, 96% 64%, 100% 61%, 100% 100%, 0% 100%);
+    }
+
+}
+
+
+/*                    MEET OUR TEAM:                  */
+
+
+
+h1 {
+    text-align: center;
+    padding: 100px 0 30px 0;
+    color: #ccc;
+}
+
+h5 {
+    text-align: center;
+    color: rgb(176, 174, 174);
+    text-shadow: 2px 2px rgba(208, 206, 206, 0.385);
+}
+
+.container {
+    padding: 2em 0;
+    float: left;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media screen and (max-width: 640px) {
+    .container {
+        display: block;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .container {
+        width: 25%;
+    }
+}
+
+.content {
+    position: relative;
+    background-color: rgba(21, 58, 68, 0.596);
+    margin: auto;
+    overflow: hidden;
+    box-shadow: -5px -5px 5px -5px rgb(184, 242, 247),
+        5px 5px 5px -5px #d8c9aa,
+        0 55px 35px -20px rgba(18, 17, 17, 0.5);
+    ;
+}
+
+.content .content-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+.content:hover .content-overlay {
+    opacity: 0.7;
+}
+
+.content-image {
+    width: 250px;
+    height: 250px;
+}
+
+.content-details {
+    position: absolute;
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.content:hover .content-details {
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+}
+
+.content-details h3 {
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+}
+
+.content-details p {
+    color: #fff;
+    font-size: 0.8em;
+}
+
+.fadeIn-bottom {
+    top: 70%;
+}
+
+.fadeIn-left {
+    left: 20%;
+}
+
+.fadeIn-right {
+    left: 80%;
+}

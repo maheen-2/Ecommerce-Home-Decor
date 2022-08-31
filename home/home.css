@@ -1,0 +1,852 @@
+body {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+}
+
+
+/*                    ANIMATED BACKGROUND:                  */
+
+.bg-glitch,
+.bg-glitch__img {
+	margin: 0;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	min-height: 100vh;
+	min-width: 100vw;
+}
+
+.bg-glitch {
+	/* The only place you can use the calc() function in properties is in values. It can perform + - / * & even combine units.
+    Be sure to put spaces around the '-' sign in the calculation. */
+	height: 100vh;
+	width: 100vw;
+	margin: 0 auto;
+	position: relative;
+	/* Setting the ◀▶⬆⬇ properties of an element will cause it to be adjusted away from its normal position. */
+	overflow: hidden;
+	/* The overflow property specifies what should happen if content overflows an element's box.
+    This property specifies whether to clip content or to add scrollbars when an element's content is too big to fit in a specified area.*/
+}
+
+.bg-glitch__img {
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	/* Absolute positioned elements are removed from the normal flow, and can overlap elements. */
+	top: 0;
+	left: 0;
+	background-color: transparent;
+	background-blend-mode: none;
+	/* Sets how an element's bg imgs should blend with each other & with the element's bg color. */
+	pointer-events: none;
+	/* Allows for control over how HTML elements respond to mouse/touch events. */
+	transform: translate3d(0, 0, 0);
+	/* Moves an element in a 3D space (x, y, z). Translate3d(0,0,0) does nothing in terms of what you C.
+    It moves the object by 0px in x, y and z axis. It's only a technique to force the hardware acceleration. */
+}
+
+.bg-glitch:hover .bg-glitch__img:nth-child(n+2) {
+	/* n+2 means for each img excluding 1st. */
+	animation-duration: 2s;
+	animation-delay: 0;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-fill-mode: forwards;
+	/* Specifies a style for the element when the animation starts / ends. */
+}
+
+.bg-glitch:hover .bg-glitch__img:nth-child(2) {
+	animation-name: glitch-anim-1;
+}
+
+.bg-glitch:hover .bg-glitch__img:nth-child(3) {
+	animation-name: glitch-anim-2;
+}
+
+.bg-glitch:hover .bg-glitch__img:nth-child(4) {
+	animation-name: glitch-anim-3;
+}
+
+.bg-glitch:hover .bg-glitch__img:nth-child(5) {
+	animation-name: glitch-anim-4;
+	background-blend-mode: overlay;
+	/* */
+	background-color: #b75555;
+}
+
+.bg-glitch__img:nth-child(n+2) {
+	opacity: 0;
+	/* Value from 0.0 - 1.0. The lower value, the more transparent! */
+}
+
+
+
+@keyframes glitch-anim-1 {
+
+	0%,
+	100% {
+		opacity: 0.3;
+		transform: translate3d(40px, 0, 0) scale3d(-1, -1, 1);
+		/* The scale3d() CSS function defines a transformation that resizes an element in 3D space. */
+		clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+	}
+
+	20% {
+		clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+	}
+
+	30% {
+		clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+	}
+
+	40% {
+		clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+	}
+
+	50% {
+		clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+	}
+
+	55% {
+		clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+	}
+
+	60% {
+		clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+	}
+
+	65% {
+
+		clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+	}
+
+	70% {
+
+		clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+	}
+
+	80% {
+		clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+	}
+
+	85% {
+		clip-path: polygon(0 60%, 100% 60%, 100% 65%, 0 65%);
+	}
+
+	95% {
+		clip-path: polygon(0 72%, 100% 72%, 100% 78%, 0 78%);
+	}
+}
+
+
+@keyframes glitch-anim-2 {
+
+	0%,
+	100% {
+		opacity: 0.4;
+		transform: translate3d(-10px, 0, 0);
+		clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
+	}
+
+	10% {
+		clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%);
+	}
+
+	15% {
+		clip-path: polygon(0 5%, 100% 5%, 100% 20%, 0 20%);
+	}
+
+	17% {
+		clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+	}
+
+	19% {
+		clip-path: polygon(0 40%, 100% 40%, 100% 40%, 0 40%);
+	}
+
+	33% {
+		clip-path: polygon(0 52%, 100% 52%, 100% 59%, 0 59%);
+	}
+
+	35% {
+		clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+	}
+
+	40% {
+		clip-path: polygon(0 75%, 100% 75%, 100% 75%, 0 75%);
+	}
+
+	45% {
+		clip-path: polygon(0 65%, 100% 65%, 100% 40%, 0 40%);
+	}
+
+	49% {
+		clip-path: polygon(0 45%, 100% 45%, 100% 50%, 0 50%);
+	}
+
+	50% {
+		clip-path: polygon(0 14%, 100% 14%, 100% 33%, 0 33%);
+	}
+
+	55% {
+		clip-path: polygon(0 15%, 100% 15%, 100% 35%, 0 35%);
+	}
+
+	60% {
+		clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+	}
+
+	70% {
+		clip-path: polygon(0 65%, 100% 65%, 100% 60%, 0 60%);
+	}
+
+	80% {
+		clip-path: polygon(0 80%, 100% 80%, 100% 85%, 0 85%);
+	}
+
+	90% {
+		clip-path: polygon(0 55%, 100% 55%, 100% 65%, 0 65%);
+	}
+}
+
+@keyframes glitch-anim-3 {
+
+	0%,
+	100% {
+		opacity: 0.6;
+		transform: translate3d(0, -5px, 0) scale3d(-1, -1, 1);
+		clip-path: polygon(0 1%, 100% 1%, 100% 3%, 0 3%);
+	}
+
+	5% {
+		clip-path: polygon(0 10%, 100% 10%, 100% 9%, 0 9%);
+	}
+
+	11% {
+		clip-path: polygon(0 5%, 100% 5%, 100% 6%, 0 6%);
+	}
+
+	20% {
+		clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+	}
+
+	25% {
+		clip-path: polygon(0 10%, 100% 10%, 100% 10%, 0 10%);
+	}
+
+	35% {
+		clip-path: polygon(0 30%, 100% 30%, 100% 25%, 0 25%);
+	}
+
+	42% {
+		clip-path: polygon(0 15%, 100% 15%, 100% 16%, 0 16%);
+	}
+
+	48% {
+		clip-path: polygon(0 40%, 100% 40%, 100% 39%, 0 39%);
+	}
+
+	50% {
+		clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%);
+	}
+
+	56% {
+		clip-path: polygon(0 60%, 100% 60%, 100% 55%, 0 55%);
+	}
+
+	61% {
+		clip-path: polygon(0 30%, 100% 30%, 100% 31%, 0 31%);
+	}
+
+	68% {
+		clip-path: polygon(0 70%, 100% 70%, 100% 69%, 0 69%);
+	}
+
+	72% {
+		clip-path: polygon(0 40%, 100% 40%, 100% 41%, 0 41%);
+	}
+
+	77% {
+		clip-path: polygon(0 80%, 100% 80%, 100% 75%, 0 75%);
+	}
+
+	81% {
+		clip-path: polygon(0 50%, 100% 50%, 100% 51%, 0 51%);
+	}
+
+	86% {
+		clip-path: polygon(0 90%, 100% 90%, 100% 90%, 0 90%);
+	}
+
+	90% {
+		clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+	}
+
+	92% {
+		clip-path: polygon(0 100%, 100% 100%, 100% 99%, 0 99%);
+	}
+
+	94% {
+		clip-path: polygon(0 70%, 100% 70%, 100% 71%, 0 71%);
+	}
+}
+
+@keyframes glitch-anim-4 {
+
+	0%,
+	5% {
+		opacity: 0.2;
+		transform: translate3d(10px, 5px, 0);
+	}
+
+	5.5%,
+	100% {
+		opacity: 0.05;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+
+/*                    HEADING & EXPLORE BTN:                  */
+
+.heading {
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	top: 280px;
+	color: white;
+	font-family: 'Caveat Brush', cursive;
+	font-weight: bolder;
+	font-size: 70px;
+	direction: rtl;
+	text-shadow: 0 0 10px rgb(52, 51, 45);
+}
+
+.explore-btn {
+	width: 120px;
+	height: 40px;
+	position: absolute;
+	top: 65%;
+	left: 56%;
+	cursor: pointer;
+	background-color: #f8961e;
+	color: white;
+	border: 0;
+	border-radius: 10px;
+	font-weight: bold;
+	overflow: hidden;
+	box-shadow: inset 0 0 0 0 #f3722c;
+	transition: ease-out 0.6s;
+}
+
+.explore-btn:hover {
+	z-index: 2;
+	width: 125px;
+	box-shadow: inset 20px 20px 30px 80px #f94144;
+	/* The presence of the inset changes the shadow to one inside the frame.
+    Opposite is outset. */
+}
+
+@media (max-width: 700px) {
+	.explore-btn {
+		top: 80%;
+	}
+}
+
+
+/*                    NAVBAR:                  */
+
+.navbar {
+	display: flex;
+	position: relative;
+	justify-content: space-between;
+	align-items: center;
+	color: white;
+}
+
+img {
+	margin: 10px 20px;
+	height: 70px;
+	width: 75px;
+	z-index: 2;
+}
+
+.navbar-links {
+	height: 100%;
+}
+
+.navbar-links ul {
+	display: flex;
+	justify-content: space-around;
+	margin: 0;
+	padding: 0;
+}
+
+.navbar-links li {
+	list-style: none;
+}
+
+.navbar-links li a {
+	display: block;
+	padding: 5px 10px;
+	margin: 10px 30px;
+	text-decoration: none;
+	color: white;
+	transition: 0.5s;
+}
+
+.navbar-links .dropdown .dropbtn {
+	color: white;
+}
+
+
+/*                    NAVBAR ANIMATION:                  */
+
+ul:hover li a {
+	/* It makes all the nav-links blurred when one is in focus. */
+	transform: scale(1.1);
+	opacity: 0.8;
+	filter: blur(5px);
+}
+
+ul li a:hover {
+	/* The nav-link in focus increases in size & get focused.*/
+	transform: scale(1.2);
+	opacity: 1;
+	filter: blur(0);
+	text-decoration: none;
+	color: #fff;
+	background-color: #f94144;
+	border-radius: 30px;
+}
+
+
+/*                    NAVBAR SHOP DROPDOWN:                  */
+
+/* Style the dropdown button to fit inside the topnav */
+.dropdown .dropbtn {
+	font-size: 17px;
+	border: none;
+	outline: none;
+	color: white;
+	background-color: inherit;
+	/* Inherits this property from its parent element. */
+	padding: 14px 16px;
+	font-family: inherit;
+	margin: 0;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	min-width: 200px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	background-color: rgba(179, 174, 174, 0.427);
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+
+/*                    NAVBAR RESPONSIVENESS:                  */
+
+.toggle-btn {
+	position: absolute;
+	top: .75rem;
+	right: 1rem;
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 30px;
+	height: 21px;
+}
+
+.toggle-btn .bar {
+	height: 3px;
+	width: 100%;
+	background-color: white;
+	border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+	.navbar {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.toggle-btn {
+		display: flex;
+	}
+
+	.navbar-links {
+		display: none;
+		width: 100%;
+		background-color: black;
+	}
+
+	.navbar-links ul {
+		width: 100%;
+		flex-direction: column;
+	}
+
+	.navbar-links ul li {
+		text-align: center;
+	}
+
+	.navbar-links ul li a {
+		padding: .5rem 1rem;
+	}
+
+	.navbar-links.active {
+		display: flex;
+	}
+}
+
+
+/*                    COLOR CHANGING FURNITURE:                  */
+
+
+/* Style the video: 100% width and height to cover the entire window*/
+#myVideo {
+	position: absolute;
+	right: 0;
+	top: 700px;
+	min-width: 100%;
+	min-height: 100%;
+	z-index: -1;
+}
+
+.heading2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 30px;
+}
+
+.section2 {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+		"image description";
+}
+
+.image {
+	grid-area: image;
+	margin: 0 0px 0 20px;
+	height: 540px;
+	width: 600px;
+	background-image: url(../imgs/a.jpg);
+	background-size: cover;
+	transition: 3s;
+	animation: changeColor;
+	animation-duration: 15s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes changeColor {
+	0% {
+		background-image: url(../imgs/a.png);
+	}
+
+	35% {
+		background-image: url(../imgs/b.png);
+	}
+
+	75% {
+		background-image: url(../imgs/c.png);
+	}
+
+	100% {
+		background-image: url(../imgs/d.png);
+	}
+}
+
+.heading2 {
+	color: white;
+	font-size: 40px;
+	margin: 20px 0 0 0;
+}
+
+.description {
+	grid-area: description;
+	padding: 30px;
+	margin: 20px;
+	font-size: 18px;
+	font-family: 'Poppins', sans-serif;
+}
+
+.description p {
+	background: linear-gradient(to right, #011919 0%, #bababb 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+}
+
+
+/*                    GALLERY CAROUSEL:                  */
+
+.section3 {
+	background-color: rgb(180, 180, 180);
+	margin: 0;
+	padding: 0;
+	height: 500px;
+}
+
+/*                    ANIMATED TYPING TEXT:                  */
+
+.wrappertxt {
+	padding: 30px;
+	margin: 0px;
+	display: flex;
+	justify-content: center;
+	color: white;
+	font-size: 35px;
+
+}
+
+.wrappertxt .statictxt {
+	font-weight: bold;
+}
+
+.wrappertxt .dynamictxt {
+	margin-left: 15px;
+	color: #f8961e;
+}
+
+.dynamictxt span {
+	position: relative;
+}
+
+.dynamictxt span:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	height: 104%;
+	width: 100%;
+	background-color: rgb(180, 180, 180);
+	border-left: 1px solid #f8961e;
+	animation: typing 3s steps(13) infinite;
+}
+
+@keyframes typing {
+	100% {
+		left: 100%;
+		margin: 0 -35px 0 35px;
+	}
+}
+
+
+/*                    ANIMATED CARDS DISPLAYED:                  */
+
+.card {
+	width: 250px;
+	height: 300px;
+	position: relative;
+	overflow: hidden;
+	margin: 20px;
+	z-index: 10;
+	border-radius: 5%;
+	box-shadow:
+		-5px -5px 5px -5px #fac,
+		5px 5px 5px -5px #ddccaa,
+		0 0 5px 0px rgba(255, 255, 255, 0),
+		0 55px 35px -20px rgba(0, 0, 0, 0.5);
+	transition: transform 0.5s ease;
+	will-change: transform, filter;
+	/* Hints to browsers how an element is expected to change. Optional!  */
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+
+.card:hover {
+	box-shadow:
+		20px -20px 30px -25px rgb(117, 159, 163),
+		-20px 20px 30px -25px rgba(173, 148, 171, 0.81),
+		-7px -7px 10px -5px rgb(0, 231, 255),
+		7px 7px 10px -5px rgba(240, 183, 234, 0.774),
+		0 0 13px 4px rgba(255, 255, 255, 0.3),
+		0 55px 35px -20px rgba(0, 0, 0, 0.5);
+}
+
+.card.charizard {
+	background-image: url(../imgs/img4.jpg);
+}
+
+.card.pika {
+	background-image: url(../imgs/img2.jpg);
+}
+
+.card.mewtwo {
+	background-image: url(../imgs/img3.jpg);
+}
+
+.card.eevee {
+	background-image: url(../imgs/img1.jpg);
+}
+
+.card:before,
+.card:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background-repeat: no-repeat;
+	opacity: .5;
+	mix-blend-mode: color-dodge;
+	transition: all .33s ease;
+}
+
+.card:before {
+	background-position: 50% 50%;
+	background-size: 300% 300%;
+	background-image: linear-gradient(115deg,
+			transparent 0%,
+			rgb(102, 162, 167) 25%,
+			transparent 47%,
+			transparent 53%,
+			rgba(171, 102, 164, 0.81) 75%,
+			transparent 100%);
+	opacity: .5;
+	filter: brightness(.5);
+}
+
+/* Goal: bling stays from start to end & colored diagonal gradient only once hovered. */
+.card:after {
+	opacity: 1;
+	/* To add stars & bling: */
+	background-image: url("https://assets.codepen.io/13471/sparkles.gif");
+	background-position: 50% 50%;
+	background-size: 160%;
+	background-blend-mode: overlay;
+	z-index: 2;
+	filter: brightness(1);
+	transition: all .33s ease;
+	mix-blend-mode: color-dodge;
+	opacity: .65;
+}
+
+.card:hover:before {
+	animation: none;
+	/* To add colored diagonal gradient once being hovered. */
+	background-image: linear-gradient(110deg,
+			transparent 25%,
+			rgb(102, 162, 167) 48%,
+			rgba(171, 102, 164, 0.81) 52%,
+			transparent 75%);
+	background-position: 50% 50%;
+	background-size: 250% 250%;
+	opacity: .88;
+	filter: brightness(.66) contrast(1.33);
+	transition: none;
+}
+
+
+/*                    GALLERY ANIMATION:                  */
+
+.card.animated {
+	animation: holoCard 12s ease 0s 1;
+}
+
+.card.animated:before {
+	animation: holoGradient 12s ease 0s 1;
+}
+
+/* It is the colored diagonal gradient that will actually move in the start before hovering. */
+@keyframes holoGradient {
+
+	0%,
+	100% {
+		opacity: 0.5;
+		background-position: 50%;
+		filter: brightness(.5) contrast(1);
+	}
+
+	5%,
+	9% {
+		background-position: 100%;
+		opacity: 1;
+		filter: brightness(.75) contrast(1.25);
+	}
+
+	13%,
+	17% {
+		background-position: 0% 0%;
+		opacity: .88;
+	}
+
+	35%,
+	39% {
+		background-position: 100%;
+		opacity: 1;
+		filter: brightness(.5) contrast(1);
+	}
+
+	55% {
+		background-position: 0%;
+		opacity: 1;
+		filter: brightness(.75) contrast(1.25);
+	}
+}
+
+/*  To rotate the card */
+@keyframes holoCard {
+
+	0%,
+	100% {
+		transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
+	}
+
+	5%,
+	8% {
+		transform: rotateZ(0deg) rotateX(6deg) rotateY(-20deg);
+	}
+
+	13%,
+	16% {
+		transform: rotateZ(0deg) rotateX(-9deg) rotateY(32deg);
+	}
+
+	35%,
+	38% {
+		transform: rotateZ(3deg) rotateX(12deg) rotateY(20deg);
+	}
+
+	55% {
+		transform: rotateZ(-3deg) rotateX(-12deg) rotateY(-27deg);
+	}
+}
+
+/* Arranging them all together. */
+.cards {
+	top: 0px;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	perspective: 2000px;
+	/* The perspective property is used to give a 3D-positioned element some perspective.
+	It defines how far the object is away from the user. So, a lower value will result in a more intensive 3D effect than a higher value.
+	When defining the it for an element, it is the CHILD elements that get the perspective view, NOT the element itself.*/
+	position: relative;
+	z-index: 1;
+}
+
+/* Responsive to all screen sizes */
+@media screen and (min-width: 600px) {
+	.cards {
+		flex-direction: row;
+	}
+}

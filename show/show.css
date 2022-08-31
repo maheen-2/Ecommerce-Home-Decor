@@ -1,0 +1,629 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+
+/*                    NAVBAR:                  */
+
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+img {
+    margin: 10px 20px;
+    height: 70px;
+    width: 75px;
+    z-index: 2;
+}
+
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    display: block;
+    padding: 5px 10px;
+    margin: 10px 30px;
+    text-decoration: none;
+    color: black;
+    transition: 0.5s;
+}
+
+.navbar-links .dropdown .dropbtn {
+    color: white;
+}
+
+.navbar-links li a .cart {
+    width: 40px;
+    height: 40px;
+    color: black;
+    background-color: white;
+}
+
+
+/*                    NAVBAR ANIMATION:                  */
+
+.navbar-links ul:hover li a {
+    /* It makes all the nav-links blurred when one is in focus. */
+    transform: scale(1.1);
+    opacity: 0.8;
+    filter: blur(5px);
+}
+
+.navbar-links ul li a:hover {
+    /* The nav-link in focus increases in size & get focused.*/
+    transform: scale(1.2);
+    opacity: 1;
+    filter: blur(0);
+    text-decoration: none;
+    color: #fff;
+    background-color: #f94144;
+    border-radius: 30px;
+}
+
+
+/*                    NAVBAR SHOP DROPDOWN:                  */
+
+/* Style the dropdown button to fit inside the topnav */
+.dropdown .dropbtn {
+    font-size: 17px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    /* Inherits this property from its parent element. */
+    padding: 14px 16px;
+    font-family: inherit;
+    margin: 0;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: rgba(179, 174, 174, 0.427);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/*                    NAVBAR RESPONSIVENESS:                  */
+
+.toggle-btn {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-btn .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-btn {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+        background-color: black;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+
+/*                    FOOTER:                  */
+
+footer {
+    margin: 100px 0 0 0;
+    padding: 70px 0 30px;
+    bottom: 0;
+    width: 100%;
+    min-height: 100px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(21, 58, 68);
+    font-size: 13px;
+    line-height: 20px;
+    color: white;
+}
+
+.row {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.col {
+    /* Defines the size of the flex-item along the main axis of the flex container. 
+    The main axis is horizontal if flex-direction is set to row and vertical if the flex-direction property is set to column.*/
+    flex-basis: 25%;
+    padding: 10px;
+    margin: 15px;
+}
+
+.col:nth-child(2),
+.col:nth-child(3) {
+    flex-basis: 15%;
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 30px;
+}
+
+.col h3 {
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.email {
+    width: fit-content;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+ul li {
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+form {
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+}
+
+form .far {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+form input {
+    width: 100%;
+    background: transparent;
+    color: #ccc;
+    border: 0;
+    outline: none;
+}
+
+form button {
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+form button .fa {
+    font-size: 16px;
+    color: 16px;
+}
+
+.social-icons .fab {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #000;
+    background: #fff;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.social-icons .fab:hover {
+    transform: translateY(-10px);
+}
+
+.end {
+    border: 0;
+    position: absolute;
+    bottom: -10px;
+}
+
+.copyright {
+    text-align: center;
+    margin: 25px 0 15px 0;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.underline {
+    width: 100%;
+    height: 5px;
+    background-color: #767676;
+    border-radius: 3px;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    overflow: hidden;
+}
+
+.underline span {
+    position: absolute;
+    background: #fff;
+    width: 15px;
+    height: 100%;
+    border-radius: 3px;
+    top: 0;
+    left: 10px;
+    animation: moving 2s linear infinite;
+}
+
+@keyframes moving {
+    0% {
+        left: 0%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    footer {
+        /* Resets a property to its inherited value. It is dobe here as we want the footer to be scrollable on smaller screens. */
+        bottom: unset;
+        width: 100vw;
+    }
+
+    .col {
+        flex-basis: 100%;
+    }
+
+    .col:nth-child(2),
+    .col:nth-child(3) {
+        flex-basis: 100%;
+    }
+}
+
+
+/*                    FOOTER WAVES ANIMATION:                  */
+
+footer .waves {
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    top: -90px;
+    left: 0;
+    background-color: rgba(21, 58, 68, 0.855);
+    ;
+    animation: waves 2s linear infinite;
+}
+
+@keyframes waves {
+
+    0% {
+        clip-path: polygon(0% 69%, 5% 64%, 9% 59%, 13% 55%, 18% 51%, 25% 51%, 30% 53%, 35% 56%, 41% 60%, 46% 62%, 53% 65%, 58% 67%, 63% 66%, 67% 63%, 71% 59%, 76% 55%, 82% 51%, 88% 51%, 93% 53%, 98% 56%, 100% 60%, 100% 100%, 0% 100%);
+    }
+
+    20% {
+        clip-path: polygon(0% 79%, 5% 74%, 9% 69%, 13% 65%, 18% 61%, 25% 61%, 30% 63%, 35% 66%, 41% 70%, 46% 72%, 53% 75%, 58% 77%, 63% 76%, 67% 73%, 71% 69%, 76% 65%, 82% 61%, 88% 61%, 93% 63%, 98% 66%, 100% 70%, 100% 100%, 0% 100%);
+    }
+
+    40% {
+        clip-path: polygon(0% 69%, 5% 64%, 9% 59%, 13% 55%, 18% 51%, 25% 51%, 30% 53%, 35% 56%, 41% 60%, 46% 62%, 53% 65%, 58% 67%, 63% 66%, 67% 63%, 71% 59%, 76% 55%, 82% 51%, 88% 51%, 93% 53%, 98% 56%, 100% 60%, 100% 100%, 0% 100%);
+    }
+
+    60% {
+        clip-path: polygon(0% 79%, 5% 74%, 9% 69%, 13% 65%, 18% 61%, 25% 61%, 30% 63%, 35% 66%, 41% 70%, 46% 72%, 53% 75%, 58% 77%, 63% 76%, 67% 73%, 71% 69%, 76% 65%, 82% 61%, 88% 61%, 93% 63%, 98% 66%, 100% 70%, 100% 100%, 0% 100%);
+    }
+
+    80% {
+        clip-path: polygon(0% 69%, 5% 64%, 9% 59%, 13% 55%, 18% 51%, 25% 51%, 30% 53%, 35% 56%, 41% 60%, 46% 62%, 53% 65%, 58% 67%, 63% 66%, 67% 63%, 71% 59%, 76% 55%, 82% 51%, 88% 51%, 93% 53%, 98% 56%, 100% 60%, 100% 100%, 0% 100%);
+    }
+
+    100% {
+        clip-path: polygon(0% 79%, 5% 74%, 9% 69%, 13% 65%, 18% 61%, 25% 61%, 30% 63%, 35% 66%, 41% 70%, 46% 72%, 53% 75%, 58% 77%, 63% 76%, 67% 73%, 71% 69%, 76% 65%, 82% 61%, 88% 61%, 93% 63%, 98% 66%, 100% 70%, 100% 100%, 0% 100%);
+    }
+
+}
+
+footer .wave {
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    top: -90px;
+    left: 0;
+    background-color: rgba(21, 58, 68, 0.737);
+    animation: wave 2s linear infinite;
+}
+
+@keyframes wave {
+
+    0% {
+        clip-path: polygon(0% 68%, 6% 71%, 11% 74%, 15% 76%, 18% 76%, 22% 76%, 25% 74%, 28% 72%, 32% 68%, 36% 64%, 42% 59%, 47% 57%, 54% 57%, 59% 60%, 66% 64%, 70% 66%, 74% 68%, 81% 73%, 87% 75%, 91% 75%, 96% 74%, 100% 71%, 100% 100%, 0% 100%);
+    }
+
+    20% {
+        clip-path: polygon(0% 58%, 6% 61%, 11% 64%, 15% 66%, 18% 66%, 22% 66%, 25% 64%, 28% 62%, 32% 58%, 36% 54%, 42% 49%, 47% 47%, 54% 47%, 59% 50%, 66% 54%, 70% 56%, 74% 58%, 81% 63%, 87% 65%, 91% 65%, 96% 64%, 100% 61%, 100% 100%, 0% 100%);
+    }
+
+    40% {
+        clip-path: polygon(0% 68%, 6% 71%, 11% 74%, 15% 76%, 18% 76%, 22% 76%, 25% 74%, 28% 72%, 32% 68%, 36% 64%, 42% 59%, 47% 57%, 54% 57%, 59% 60%, 66% 64%, 70% 66%, 74% 68%, 81% 73%, 87% 75%, 91% 75%, 96% 74%, 100% 71%, 100% 100%, 0% 100%);
+    }
+
+    60% {
+        clip-path: polygon(0% 58%, 6% 61%, 11% 64%, 15% 66%, 18% 66%, 22% 66%, 25% 64%, 28% 62%, 32% 58%, 36% 54%, 42% 49%, 47% 47%, 54% 47%, 59% 50%, 66% 54%, 70% 56%, 74% 58%, 81% 63%, 87% 65%, 91% 65%, 96% 64%, 100% 61%, 100% 100%, 0% 100%);
+    }
+
+    80% {
+        clip-path: polygon(0% 68%, 6% 71%, 11% 74%, 15% 76%, 18% 76%, 22% 76%, 25% 74%, 28% 72%, 32% 68%, 36% 64%, 42% 59%, 47% 57%, 54% 57%, 59% 60%, 66% 64%, 70% 66%, 74% 68%, 81% 73%, 87% 75%, 91% 75%, 96% 74%, 100% 71%, 100% 100%, 0% 100%);
+    }
+
+    100% {
+        clip-path: polygon(0% 58%, 6% 61%, 11% 64%, 15% 66%, 18% 66%, 22% 66%, 25% 64%, 28% 62%, 32% 58%, 36% 54%, 42% 49%, 47% 47%, 54% 47%, 59% 50%, 66% 54%, 70% 56%, 74% 58%, 81% 63%, 87% 65%, 91% 65%, 96% 64%, 100% 61%, 100% 100%, 0% 100%);
+    }
+
+}
+
+
+/*                    YOUR CART:                  */
+
+.cart {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 360px;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: rgba(222, 219, 219, 0.882);
+    box-shadow: -2px 0 4px gray;
+    transition: 0.3s;
+    z-index: 2;
+}
+
+
+.cart-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 3rem;
+}
+
+.cart-box {
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.cart-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.detail-box {
+    display: grid;
+    row-gap: 0.5rem;
+}
+
+.cart-product-title {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.cart-product-price {
+    font-weight: 500;
+}
+
+.cart-quantity {
+    border: 1px solid rgb(26, 93, 80);
+    outline-color: rgb(32, 42, 159);
+    width: 2.4rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.cart-remove {
+    cursor: pointer;
+    font-size: 24px;
+    color: rgb(228, 8, 8);
+}
+
+.cart-remove:hover {
+    color: rgb(162, 17, 17);
+}
+
+.cart-total {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    border-top: 1px solid rgb(29, 76, 83);
+}
+
+.total-title {
+    margin: 1.5rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.total-price {
+    margin: 1.5rem 0.5rem;
+}
+
+.btn-buy {
+    display: flex;
+    margin: .5rem auto 0 auto;
+    padding: 12px 15px;
+    border: none;
+    background-color: rgb(38, 104, 114);
+    border-radius: 6px;
+}
+
+.btn-buy a {
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.btn-buy:hover {
+    background-color: rgb(35, 90, 99);
+    padding: 12px 20px;
+}
+
+.close-cart {
+    position: absolute;
+    top: 1rem;
+    right: 0.8rem;
+    font-size: 2rem;
+    font-weight: 400;
+    cursor: pointer;
+    color: rgb(29, 76, 83);
+    text-shadow: 2px 2px 2px rgb(152, 151, 151);
+}
+
+
+/*                    PRODUCT DETAILS:                  */
+
+.container {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    grid-template-areas:
+        "carousel detail";
+    margin: 20px;
+    padding: 0px;
+    height: 100%;
+}
+
+.carousel {
+    grid-area: carousel;
+    margin: 40px 10px 40px 0;
+
+}
+
+.d-block {
+    height: 90vh;
+    width: 100vw;
+}
+
+.detail {
+    grid-area: detail;
+    margin: 40px 0 40px 10px;
+    padding: 10px 0 10px 40px;
+}
+
+.color {
+    height: 70px;
+    width: 70px;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.color:hover {
+    border: 2px solid #f94144;
+    cursor: pointer;
+}
+
+.select {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "size product-quantity"
+}
+
+.size {
+    grid-area: size;
+    margin: 10px 10px 0 0;
+    height: 40px;
+}
+
+.quantity {
+    grid-area: product-quantity;
+    margin: 0 0 0 60px;
+}
+
+.btn {
+    margin: 30px 0 0 0;
+    width: 100%;
+    cursor: pointer;
+    background-color: #f8961e;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 0 #f3722c;
+    transition: ease-out 0.6s;
+}
+
+.btn:hover,
+.btn:focus {
+    box-shadow: inset 20px 20px 30px 80px #f94144;
+    border: none;
+    color: white;
+    /* The presence of the inset changes the shadow to one inside the frame.
+    Opposite is outset. */
+}
